@@ -172,33 +172,6 @@ header {
     color: #9b9898
 }
 
-#services-details {
-  margin-top: 30px;
-  margin-bottom: 40px;
-}
-
-.service-card {
-  background-color: #f6eaea;
-  padding: 24px;
-  margin-bottom: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  scroll-margin-top: 20px;
-}
-
-.service-card h2 {
-  color: #1a2a3a;
-  border-bottom: 2px solid #007bff;
-  padding-bottom: 6px;
-  margin-top: 0;
-}
-
-.service-card ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  color: #444444;
-}
-
 /* --- Contact Form Styles --- */
 .form-container {
   background: #000;
@@ -295,9 +268,7 @@ header {
   background-color: #ff0000; 
 }
 
-/* ==========================================
-   Footer Styles
-   ========================================== */
+/* Footer Styles */
 footer {
   background-color: #222; 
   color: #e0e0e0;
@@ -331,62 +302,34 @@ footer a:hover {
   font-size: 0.75rem; 
 }
 
-.footer-icons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 25px;
+/* Pricing Page BG */
+.pricing-container {
+  background-image: url('../images/bgimg.JPEG');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* This creates the parallax/floating lock effect */
+  padding: 60px 20px;
 }
 
-.circle-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background-color: #444; 
-  color: #ffffff;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+/* Feature Page BG */
+.feat-container {
+  background-image: url('../images/bgimg.JPEG');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* This creates the parallax/floating lock effect */
+  padding: 60px 20px;
 }
 
-.circle-icon:hover {
-  transform: translateY(-5px); 
-  color: #ffffff !important; 
+/* About Page BG */
+.about-container {
+  background-image: url('../images/image2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* This creates the parallax/floating lock effect */
+  padding: 60px 20px;
 }
 
-.resume-icon:hover {
-  background-color: #28a745; 
-}
-
-.github-icon:hover {
-  background-color: #000000; 
-}
-
-.fb-icon:hover {
-  background-color: #1877f2; 
-}
-
-.icon-text {
-  font-size: 1.1rem;
-  font-weight: bold;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.social-svg {
-  width: 22px;
-  height: 22px;
-}
-
-footer p {
-  font-size: 0.85rem;
-  color: #aaaaaa;
-  margin-top: 10px;
-}
-
-/* ==========================================
-   Responsive Styles (Para sa Mobile View)
-   ========================================== */
+/* Responsive Styles (Para sa Mobile View) */
 @media (max-width: 768px) {
   .form-grid {
     grid-template-columns: 1fr;

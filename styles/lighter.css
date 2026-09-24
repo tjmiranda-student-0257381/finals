@@ -6,7 +6,7 @@
 /* --- Base & Reset Styles --- */
 body {
   margin: 0;
-  min-height: 100vh;
+  min-height: 100vh; /*To make sure the screen will display full screen*/
   display: flex;
   justify-content: center;
   align-items: center;
