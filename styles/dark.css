@@ -316,6 +316,8 @@ footer a:hover {
   background-position: center;
   background-attachment: fixed; /* --- This creates the parallax/floating lock effect --- */
   padding: 60px 20px;
+  min-height: 100vh;
+  box-sizing: border-box; /* --- To make sure padding will not push the height past 100 viewport height--- */
 }
 
 /* --- About Page BG --- */
