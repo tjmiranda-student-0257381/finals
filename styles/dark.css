@@ -318,6 +318,8 @@ footer a:hover {
   padding: 60px 20px;
   min-height: 100vh;
   box-sizing: border-box; /* --- To make sure padding will not push the height past 100 viewport height--- */
+  /* --- NOTE: the above code did not change the height of the bg image but its ok, ill leave it
+   alone for now (maybe I should consult with the professor to make it how i wanted it to show in my pricing page) --- */
 }
 
 /* --- About Page BG --- */
