@@ -303,7 +303,7 @@ footer a:hover {
 /* --- Pricing Page BG --- */
 .pricing-container {
   background-image: url('../images/anon.PNG');
-  background-size: cover;
+  background-size:auto;
   background-position: center;
   background-attachment: fixed; /* --- This creates the parallax/floating lock effect --- */
   padding: 60px 20px;
