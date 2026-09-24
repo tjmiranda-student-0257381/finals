@@ -55,9 +55,7 @@ div img {
   height: auto;
 }
 
-/* 
-   Nice Header Styles
- */
+/* --- Nice Header Styles --- */
 header {
   position: sticky;
   top: 0;
@@ -69,8 +67,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333; /* Kept 333 to match my existing styling, or change to 222 to my match footer */
-  padding: 1rem 2rem;
+  background-color: #333; /* --- Kept 333 to match my existing styling, or change to 222 to match footer --- */
+  padding: 1rem 2rem; /* --- 1 root element 2 root element --- */
   position: relative;
 }
 
@@ -86,7 +84,7 @@ header {
 }
 
 .logo:hover {
-  transform: scale(1); /*logo remain the same size when hover*/
+  transform: scale(1); /* --- Scale to 1 to make sure logo remain the same size when hover --- */
 }
 
 .logo-prefix {
@@ -123,7 +121,7 @@ header {
 
 .nav-link {
   color: #e0e0e0;
-  /*background-color: #181717f1; ****decided to not use button bg color*/
+  /* --- background-color: #181717f1; decided to not use button bg color --- */
   border-radius: 6px;
   text-decoration: none;
   font-size: 0.80rem;
@@ -131,7 +129,7 @@ header {
   letter-spacing: 1px;
   text-transform: uppercase;
   position: relative;
-  padding: 5px 5px; /*make the buttons in header menu to breathe*/
+  padding: 5px 5px; /* --- make the buttons in header menu to breathe --- */
   transition: color 0.3s ease;
 }
 
@@ -145,7 +143,7 @@ header {
 
 /* --- Mobile Menu Toggle --- */
 .menu-toggle {
-  display: none; /* --- Don't display the toggle menu --- */
+  display: none; /* --- Don't display the toggle menu keep it invisible for looks --- */
 }
 
 .hamburger-label {
@@ -270,7 +268,7 @@ header {
 
 /* Footer Styles */
 footer {
-  background-color: #222; 
+  background-color: #222; /* --- Slightly diff frm header bg color --- */
   color: #e0e0e0;
   padding: 2.5rem 1.5rem 1.5rem; 
   text-align: center;
@@ -302,34 +300,34 @@ footer a:hover {
   font-size: 0.75rem; 
 }
 
-/* Pricing Page BG */
+/* --- Pricing Page BG --- */
 .pricing-container {
   background-image: url('../images/bgimg.JPEG');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* This creates the parallax/floating lock effect */
+  background-attachment: fixed; /* --- This creates the parallax/floating lock effect --- */
   padding: 60px 20px;
 }
 
-/* Feature Page BG */
+/* --- Feature Page BG --- */
 .feat-container {
   background-image: url('../images/bgimg.JPEG');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* This creates the parallax/floating lock effect */
+  background-attachment: fixed; /* --- This creates the parallax/floating lock effect --- */
   padding: 60px 20px;
 }
 
-/* About Page BG */
+/* --- About Page BG --- */
 .about-container {
   background-image: url('../images/image2.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* This creates the parallax/floating lock effect */
+  background-attachment: fixed; /* --- This creates the parallax/floating lock effect --- */
   padding: 60px 20px;
 }
 
-/* Responsive Styles (Para sa Mobile View) */
+/* --- Responsive Styles (Para sa Mobile View) --- */
 @media (max-width: 768px) {
   .form-grid {
     grid-template-columns: 1fr;
@@ -388,7 +386,7 @@ footer a:hover {
   }
 
   .nav-link::after {
-    display: none; /* Disables the animated underline on mobile menus for cleaner UX */
+    display: none; /* --- Disables the animated underline on mobile menus for cleaner looks --- */
   }
 
   .menu-toggle:checked ~ .hamburger-label .bar:nth-child(1) {
