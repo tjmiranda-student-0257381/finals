@@ -8,11 +8,6 @@
   color-scheme: dark light; /* --- Default color is dark, but supports both, though it wont work for images that are dark --- */
 }
 
-/* --- If using the checkbox switc, this will forces it to be in light Mode --- */
-html:has(#theme-toggle:checked) {
-  color-scheme: light;
-}
-
 /* --- Base & Reset Styles --- */
 body {
   margin: 0;
@@ -53,6 +48,14 @@ h2 {
   font-size: 140%;
 }
 
+h3 {
+  font-size: 117%;
+}
+
+h4 {
+  font-size: 100%;
+}
+
 ul {
   list-style-type: square;
 }
@@ -67,8 +70,22 @@ div img {
   height: auto;
 }
 
+/* --- General Button Styles --- */
+.btn-pricing {
+  background: #2563eb; 
+  color: #fff; 
+  padding: 12px 25px; 
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-pricing:hover {
+  background: #ff0000; /* --- Red bg color on hover --- */
+}
+
 /* --- Theme Switcher Button Styles --- */
-/* --- Because there is no javascript, user need to keep on clicking the theme to change theme when opening other page --- */
+/* --- NOTE: If there is no javascript, user need to keep on clicking the theme to change theme when opening other page --- */
 /* --- Hide the raw checkbox on top of header --- */
 .theme-toggle-checkbox {
   display: none; 
@@ -96,12 +113,12 @@ div img {
   color: #ffffff;
 }
 
-/* --- Nice Header Styles --- */
+/* --- Header Styles --- */
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: light-dark(0 4px 12px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.15));
+  box-shadow: 0 4px 12px light-dark(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15));
 }
 
 .navbar {
@@ -109,7 +126,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: light-dark(#ffffff, #333);
-  border-bottom: light-dark(1px solid #e5e7eb, none);
+  border-bottom: 1px solid light-dark(#e5e7eb, transparent);
   padding: 1rem 2rem; 
   position: relative;
 }
@@ -217,8 +234,8 @@ header {
   background: light-dark(#f9fafb, #000);
   padding: 30px;
   border-radius: 3px;
-  box-shadow: light-dark(0 4px 10px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(148, 141, 141, 0.1));
-  border: light-dark(1px solid #e5e7eb, none);
+  box-shadow: 0 4px 10px light-dark(rgba(0, 0, 0, 0.05), rgba(148, 141, 141, 0.1));
+  border: 1px solid light-dark(#e5e7eb, transparent);
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
@@ -318,7 +335,7 @@ footer {
   padding: 2.5rem 1.5rem 1.5rem; 
   text-align: center;
   clear: both;
-  border-top: light-dark(1px solid #d1d5db, none);
+  border-top: 1px solid light-dark(#d1d5db, transparent);
 }
 
 footer a {
@@ -402,14 +419,14 @@ footer a:hover {
     align-items: stretch; 
     padding: 0;          
     margin: 0;
-    box-shadow: light-dark(-4px 4px 15px rgba(0, 0, 0, 0.1), -4px 4px 15px rgba(0, 0, 0, 0.4)); 
+    box-shadow: -4px 4px 15px light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)); 
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
     z-index: 1000;        
   }
 
-  .menu-toggle:checked ~ .nav-menu {
+  #menu-toggle:checked ~ .nav-menu {
     max-height: 400px;    
   }
 
@@ -435,15 +452,15 @@ footer a:hover {
     display: none; 
   }
 
-  .menu-toggle:checked ~ .hamburger-label .bar:nth-child(1) {
+  #menu-toggle:checked ~ .hamburger-label .bar:nth-child(1) {
     transform: translateY(8.5px) rotate(45deg);
   }
 
-  .menu-toggle:checked ~ .hamburger-label .bar:nth-child(2) {
+  #menu-toggle:checked ~ .hamburger-label .bar:nth-child(2) {
     opacity: 0;
   }
 
-  .menu-toggle:checked ~ .hamburger-label .bar:nth-child(3) {
+  #menu-toggle:checked ~ .hamburger-label .bar:nth-child(3) {
     transform: translateY(-8.5px) rotate(-45deg);
   }
 }
