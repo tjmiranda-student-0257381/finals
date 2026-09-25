@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +7,14 @@
     <title>HTML 5 - Features</title>
 </head>
 <body>
+    <!-- Added this hidden checkbox -->
+    <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox">
     <div class="container">
       <header>
         <nav class="navbar"><a href="index.html" target="_self" class="logo">
                     <span class="logo-prefix">H T M L </span> 
                     <span class="logo-second">5</span> 
             </a>
-             <input type="checkbox" id="menu-toggle" class="menu-toggle">
             <label for="menu-toggle" class="hamburger-label" aria-label="Toggle navigation">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -33,6 +33,7 @@
                 <li><a href="support.html" class="nav-link">Support</a></li>
                 ***hide these menu for now so it is only visible in footer menu***-->
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><label for="theme-toggle" class="theme-switch-btn">🌓 Theme</label></li>
             </ul>
         </nav>
       </header>

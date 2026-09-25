@@ -3,6 +3,16 @@
    Author: TJ Miranda
    ========================================== */
 
+/* --- Enable the light-dark() function - based on Murachs book page 337 --- */
+:root { 
+  color-scheme: dark light; /* --- Default color is dark, but supports both, though it wont work for images that are dark --- */
+}
+
+/* --- If using the checkbox switc, this will forces it to be in light Mode --- */
+html:has(#theme-toggle:checked) {
+  color-scheme: light;
+}
+
 /* --- Base & Reset Styles --- */
 body {
   margin: 0;
@@ -11,11 +21,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #000000;
+  /* --- Format: light-dark(Light Mode Color, Dark Mode Color) --- */
+  background-color: light-dark(#f4f4f5, #000000);
+  color: light-dark(#1f2937, #f5f0f0);
 }
 
 main {
-  flex: 1; /* To make sure footer is pushed to the bottom */
+  flex: 1; 
 }
 
 /* --- box in center page --- */
@@ -23,7 +35,7 @@ main {
   max-width: 1200px;
   width: 95%;
   margin: 0 auto;
-  background-color: #181717f1;
+  background-color: light-dark(#ffffff, #181717f1);
   padding: 20px;
   box-sizing: border-box;
   flex: 1;
@@ -34,7 +46,7 @@ main {
 /* --- Typography & Global Elements --- */
 h1 {
   font-size: 180%;
-  color: #f5f0f0;
+  color: light-dark(#111827, #f5f0f0);
 }
 
 h2 {
@@ -46,7 +58,7 @@ ul {
 }
 
 a {
-  text-decoration: none; /* --- No underline in hyperlink --- */
+  text-decoration: none; 
   color: inherit;
 }
 
@@ -55,20 +67,50 @@ div img {
   height: auto;
 }
 
+/* --- Theme Switcher Button Styles --- */
+/* --- Because there is no javascript, user need to keep on clicking the theme to change theme when opening other page --- */
+/* --- Hide the raw checkbox on top of header --- */
+.theme-toggle-checkbox {
+  display: none; 
+}
+
+/* --- Make the label look like a button --- */
+.theme-switch-btn {
+  cursor: pointer;
+  color: light-dark(#4b5563, #e0e0e0);
+  background-color: light-dark(#e5e7eb, #4a4a4a);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.80rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  user-select: none; /* --- Prevents text highlighting when double-clicked --- */
+}
+
+/* --- Hover effect matching your other nav links --- */
+.theme-switch-btn:hover {
+  background-color: #3925ee; 
+  color: #ffffff;
+}
+
 /* --- Nice Header Styles --- */
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: light-dark(0 4px 12px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.15));
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333; /* --- Kept 333 to match my existing styling, or change to 222 to match footer --- */
-  padding: 1rem 2rem; /* --- 1 root element 2 root element --- */
+  background-color: light-dark(#ffffff, #333);
+  border-bottom: light-dark(1px solid #e5e7eb, none);
+  padding: 1rem 2rem; 
   position: relative;
 }
 
@@ -84,18 +126,18 @@ header {
 }
 
 .logo:hover {
-  transform: scale(1); /* --- Scale to 1 to make sure logo remain the same size when hover --- */
+  transform: scale(1); 
 }
 
 .logo-prefix {
   font-weight: 300;
   font-family: 'Times New Roman', Times, serif;
-  color: #ffffff;
+  color: light-dark(#111827, #ffffff);
   font-size: 1.1rem;
   text-transform: uppercase;
 }
 
-.logo-second { /* --- HTML logo name color, bg color, spacing etc --- */
+.logo-second { 
   font-weight: 800;
   color: #ffffff;
   background-color: #ff0000;
@@ -106,8 +148,8 @@ header {
 }
 
 .logo-second:hover {
-  color: #ffffff; /* --- Logo Color --- */
-  background-color: #007bff;  /* --- bg color when hovering logo --- */
+  color: #ffffff; 
+  background-color: #007bff; 
 }
 
 /* --- Navigation Links --- */
@@ -120,8 +162,7 @@ header {
 }
 
 .nav-link {
-  color: #e0e0e0;
-  /* --- background-color: #181717f1; decided to not use button bg color --- */
+  color: light-dark(#4b5563, #e0e0e0);
   border-radius: 6px;
   text-decoration: none;
   font-size: 0.80rem;
@@ -129,12 +170,13 @@ header {
   letter-spacing: 1px;
   text-transform: uppercase;
   position: relative;
-  padding: 5px 5px; /* --- make the buttons in header menu to breathe --- */
-  transition: color 0.3s ease;
+  padding: 5px 5px; 
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .nav-link:hover {
-  background-color: #3925ee; /* --- To make sure people can see what link is about to be clicked (PWD in mind) --- */ 
+  background-color: #3925ee; 
+  color: #ffffff;
 }
 
 .nav-link:hover::after {
@@ -143,7 +185,7 @@ header {
 
 /* --- Mobile Menu Toggle --- */
 .menu-toggle {
-  display: none; /* --- Don't display the toggle menu keep it invisible for looks --- */
+  display: none; 
 }
 
 .hamburger-label {
@@ -158,24 +200,25 @@ header {
 .bar {
   height: 3px;
   width: 100%;
-  background-color: #fff;
+  background-color: light-dark(#1f2937, #fff);
   border-radius: 2px;
   transition: all 0.3s ease-in-out;
 }
 
 .content {
-    color: #817e7e
+  color: light-dark(#4b5563, #817e7e);
 }
 .content h3{
-    color: #9b9898
+  color: light-dark(#374151, #9b9898);
 }
 
 /* --- Contact Form Styles --- */
 .form-container {
-  background: #000;
+  background: light-dark(#f9fafb, #000);
   padding: 30px;
   border-radius: 3px;
-  box-shadow: 0 4px 10px rgba(148, 141, 141, 0.1);
+  box-shadow: light-dark(0 4px 10px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(148, 141, 141, 0.1));
+  border: light-dark(1px solid #e5e7eb, none);
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
@@ -184,7 +227,7 @@ header {
 
 .form-container h2 {
   margin-bottom: 20px;
-  color: #cabebe;
+  color: light-dark(#111827, #cabebe);
   text-align: center;
 }
 
@@ -202,7 +245,7 @@ header {
   display: block;
   font-weight: bold;
   margin-bottom: 6px;
-  color: #8d8787;
+  color: light-dark(#374151, #8d8787);
   font-size: 14px;
 }
 
@@ -211,7 +254,9 @@ header {
 .form-group textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #332e2e;
+  border: 1px solid light-dark(#d1d5db, #332e2e);
+  background-color: light-dark(#ffffff, #000000);
+  color: light-dark(#1f2937, #f5f0f0);
   border-radius: 4px;
   font-size: 14px;
   box-sizing: border-box;
@@ -266,17 +311,18 @@ header {
   background-color: #ff0000; 
 }
 
-/* Footer Styles */
+/* --- Footer Styles --- */
 footer {
-  background-color: #222; /* --- Slightly diff frm header bg color --- */
-  color: #e0e0e0;
+  background-color: light-dark(#e5e7eb, #222); 
+  color: light-dark(#374151, #e0e0e0);
   padding: 2.5rem 1.5rem 1.5rem; 
   text-align: center;
   clear: both;
+  border-top: light-dark(1px solid #d1d5db, none);
 }
 
 footer a {
-  color: #fff;
+  color: light-dark(#111827, #fff);
   text-decoration: none; 
   transition: color 0.3s ease; 
 }
@@ -300,38 +346,34 @@ footer a:hover {
   font-size: 0.75rem; 
 }
 
-/* --- Pricing Page BG --- */
+/* --- Page Backgrounds --- */
 .pricing-container {
   background-image: url('../images/anon.PNG');
   background-size:auto;
   background-position: center;
-  background-attachment: fixed; /* --- This creates the parallax/floating lock effect --- */
+  background-attachment: fixed; 
   padding: 60px 20px;
 }
 
-/* --- Feature Page BG --- */
 .feat-container {
   background-image: url('../images/bgimg.JPEG');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* --- This creates the parallax/floating lock effect --- */
+  background-attachment: fixed; 
   padding: 60px 20px;
   min-height: 100vh;
-  box-sizing: border-box; /* --- To make sure padding will not push the height past 100 viewport height--- */
-  /* --- NOTE: the above code did not change the height of the bg image but its ok, ill leave it
-   alone for now (maybe I should consult with the professor to make it how i wanted it to show in my pricing page) --- */
+  box-sizing: border-box; 
 }
 
-/* --- About Page BG --- */
 .about-container {
   background-image: url('../images/image2.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* --- This creates the parallax/floating lock effect --- */
+  background-attachment: fixed; 
   padding: 60px 20px;
 }
 
-/* --- Responsive Styles (Para sa Mobile View) --- */
+/* --- Responsive Styles (mobile view) --- */
 @media (max-width: 768px) {
   .form-grid {
     grid-template-columns: 1fr;
@@ -355,12 +397,12 @@ footer a:hover {
     right: 0;            
     left: auto;          
     width: 250px;        
-    background-color: #333;
+    background-color: light-dark(#ffffff, #333);
     flex-direction: column;
     align-items: stretch; 
     padding: 0;          
     margin: 0;
-    box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.4); 
+    box-shadow: light-dark(-4px 4px 15px rgba(0, 0, 0, 0.1), -4px 4px 15px rgba(0, 0, 0, 0.4)); 
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
@@ -373,7 +415,7 @@ footer a:hover {
 
   .nav-menu li {
     width: 100%;
-    border-bottom: 1px solid #4a4a4a; 
+    border-bottom: 1px solid light-dark(#e5e7eb, #4a4a4a); 
   }
 
   .nav-menu li:last-child {
@@ -386,11 +428,11 @@ footer a:hover {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 700;    
     font-size: 1rem;
-    color: #fff;
+    color: light-dark(#1f2937, #fff);
   }
 
   .nav-link::after {
-    display: none; /* --- Disables the animated underline on mobile menus for cleaner looks --- */
+    display: none; 
   }
 
   .menu-toggle:checked ~ .hamburger-label .bar:nth-child(1) {
