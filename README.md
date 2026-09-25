@@ -6,5 +6,5 @@
 <li><a href="https://giscus.app/">Giscus Discussion Board for Github Hosted Website (Static HTML)</a></li>
 <li><a href="https://formspree.io">Formsfree Contact Form for Static Website</a></li>
 <li><a href="https://philreynolds.dev/posts/2021/theme-toggle">Theme Switcher Javascript from Phil Reynolds Dev Site</a></li>
-</ul><BR><BR>
-<b>Other Resouces:</b> Murach's HTML and CSS Book - Referenced for implementing the native CSS light-dark() function to handle color scheme switching without duplicating stylesheets (Page 337).
+</ul><BR>
+<b>Other Resouces:</b> Murach's HTML and CSS Book 6th Edition (Ruvulcaba, Zak et al) - Referenced for implementing the native CSS light-dark() function to handle color scheme switching without duplicating stylesheets (Page 337).
