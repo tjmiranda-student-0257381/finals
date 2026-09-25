@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>README Page</title>
+    
 </head>
 <body>
 <b>West Hills Lemoore College. COMP-001A-L01. Fall semester 2026.</b><hr>
